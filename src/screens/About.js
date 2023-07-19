@@ -22,7 +22,7 @@ const About = ({ onPress }) => {
           <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.navText}>About</Text>
+          <Text style={styles.navText}>About</Text> 
         </TouchableOpacity>
         <TouchableOpacity>
           <Text style={styles.navText}>Profile</Text>

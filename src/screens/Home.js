@@ -1,34 +1,33 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
-const Home = ({ onPress }) => {
+const Home = ({ navigation }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
+  const [information, setInformation] = useState('');
 
   const handleSubmit = () => {
     // Lakukan sesuatu dengan data yang diisi pada form
     console.log('Nama:', name);
     console.log('Alamat:', address);
+    console.log('Keterangan:', information);
 
     // Reset nilai input setelah submit
     setName('');
     setAddress('');
+    setInformation('');
   };
 
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.navItem}>
-      <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-        {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('About')}> */}
+        <TouchableOpacity onPress={() => navigation.navigate('About')}>
           <Text style={styles.navText}>About</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity>
-          <Text style={styles.navText}>Profile</Text>
-        </TouchableOpacity> */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
           <Text style={styles.navText}>Contact</Text>
         </TouchableOpacity>
       </View>
@@ -49,14 +48,13 @@ const Home = ({ onPress }) => {
         <TextInput
           style={styles.input}
           placeholder="Keterangan"
-          value={address}
-          onChangeText={text => check-box(text)}
+          value={information}
+          onChangeText={text => setInformation(text)}
         />
         <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
           <Text style={styles.submitButtonText}>Button</Text>
         </TouchableOpacity>
       </View>
-      
     </View>
   );
 };
