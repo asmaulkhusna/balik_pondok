@@ -62,6 +62,7 @@ const About = ({onPress}) => {
           jadi Aplikasi ini dapat digunakan pada saat balik pondok pesantren Sumber Baru Al-Falah.
         </Text>
       </View>
+      
     </View>
 
     // </View>

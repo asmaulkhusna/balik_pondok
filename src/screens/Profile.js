@@ -1,13 +1,14 @@
 import {StyleSheet, Text, Image, View, Linking} from 'react-native';
 import React from 'react';
-import {white} from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
 
 const Profile = () => {
   return (
     <View style={{justifyContent: 'center', alignItems: 'center', margin: 30}}>
       <Image
         style={{height: 100, width: 100}}
-        source={require('../img/java.jpg')}
+        source={require('../img/aku.jpeg')}
         borderRadius={30}
       />
       <Text
@@ -31,24 +32,35 @@ const Profile = () => {
         Saya Adalah Mahasiswa Jurusan Tegnologi Kelas A Intsitut Saint Tegnologi
         Annuqayah guluk-guluk sumenep madura
       </Text>
-      
+      <Text
+        style={{
+          fontWeight: 'bold',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginHorizontal: 20,
+          marginTop: 20,
+          color: 'black',
+          fontSize: 15,
+        }}>
+        Ikuti Kami:
+      </Text>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <Text
-          onPress={() => Linking.openURL('https://github.com/asmaulkhusna')}
+          onPress={() => Linking.openURL('https://github.com/asmaulkhusna')} 
           style={{
-            margin: 20,
-            padding: 10,
-            width: 200,
-            height: 50,
-            backgroundColor: 'black',
-            marginTop: 20,
-            borderRadius: 20,
-            fontSize: 20,
+            fontWeight: 'bold',
             color: 'white',
+            backgroundColor: 'black',
+            padding: 15,
+            margin: 7,
+            fontSize: 16,
+            borderRadius: 10,
+            // background: URL('../img/java.jpg')
           }}>
              Tombol Github
         </Text>
       </View>
+      
     </View>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
 
-
   const Home = ({ navigation }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -12,14 +11,16 @@ import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-nativ
     // Lakukan sesuatu dengan data yang diisi pada form
     console.log('Nama:', name);
     console.log('Alamat:', address);
+    console.log('Pembimbing Kamar:', RoomGuide);
     console.log('Keterangan:', information);
 
     // Reset nilai input setelah submit
     setName('');
     setAddress('');
+    setRoomGuide('');
     setInformation('');
   };
-
+  
   return (
     <View style={{ flex: 1 }}>
       <View style={{alignItems: 'center',}}>
@@ -42,7 +43,7 @@ import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-nativ
           style={styles.input}
           placeholder="Pembimbing Kamar"
           value={information}
-          onChangeText={text => setInformation(text)}
+          onChangeText={text => setRoomGuide(text)}
         />
         <TextInput
           style={styles.input}
