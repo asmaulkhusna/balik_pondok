@@ -1,35 +1,36 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { Component } from 'react'
+import {StyleSheet, Text, View, Image} from 'react-native';
+import React, {Component} from 'react';
+import {StackActions} from '@react-navigation/native';
 
-import {stackActions} from '@greact-nativigation/native'
-
-class About extends Component {
-  constructor(props){
+class SplashScreen extends Component {
+  constructor(props) {
     super(props);
-    this.state ={};
+    this.state = {};
   }
-
-  componentDidMount(){
-    setTimeout(() =>{
-      this.props.navigation.dispatch(stackActions.replace('About'));
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.navigation.dispatch(StackActions.replace('Utama'));
     }, 3000);
-  
   }
 
   render() {
-  return (
-    <View>
-      <Text>About</Text>
-      {/* <TouchableOpacity
-        onPress={() => this.props.navigation.navigate('Home')}>
-        <text>move to About</text>
-      </TouchableOpacity> */}
-    </View>
-  )
-}
+    return (
+      <View style={styles.kotak}>
+        <Image source={require('../img/logo.png')} style={{width: 100, height: 100, padding: 10}}/>
+        <Text style={{fontWeight: 'bold', justifyContent:'center', alignItems: 'center', marginHorizontal: 20, fontSize: 17, marginTop: 8}}>Pondok Pesantren Sumber Baru Al-Falah</Text>
+        <Text style={{justifyContent:'center', alignItems: 'center', marginHorizontal: 20}}>Ds. Dempo Barat Kec. Pasean Kab. Pamekasan</Text>
+      </View>
+    );
+  }
 }
 
+export default SplashScreen;
 
-export default About
-
-// const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  kotak: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

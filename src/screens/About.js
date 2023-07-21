@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  TextInput,
+  Linking,
+} from 'react-native';
 
-const About = ({ onPress }) => {
+const About = ({onPress}) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
 
@@ -16,48 +23,63 @@ const About = ({ onPress }) => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'yellow' }}>
-      <View style={styles.navItem}>
-      <TouchableOpacity>
-          <Text style={styles.navText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.navText}>About</Text> 
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.navText}>Profile</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.navText}>Contact</Text>
-        </TouchableOpacity>
-      </View>
+    // <View style={{ flex: 1, backgroundColor: 'yellow' }}>
+    //   <View style={styles.navItem}>
+    //   <TouchableOpacity>
+    //       <Text style={styles.navText}>Home</Text>
+    //     </TouchableOpacity>
+    //     <TouchableOpacity>
+    //       <Text style={styles.navText}>About</Text>
+    //     </TouchableOpacity>
+    //     <TouchableOpacity>
+    //       <Text style={styles.navText}>Profile</Text>
+    //     </TouchableOpacity>
+    //     <TouchableOpacity>
+    //       <Text style={styles.navText}>Contact</Text>
+    //     </TouchableOpacity>
+    //   </View>
 
     <View style={styles.container}>
-      <Text style={styles.title}>About</Text>
-      <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut nibh nec lectus malesuada varius.
-        Vestibulum sodales justo velit, vitae lobortis tellus fermentum nec. In sagittis ullamcorper ipsum.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin viverra
-        arcu enim, a vulputate lectus lacinia non. Quisque semper rhoncus ligula, vel luctus nulla vestibulum sit amet.
-      </Text>
+      <View style={{justifyContent:'center', alignItems: 'center'}}>
+        <Text
+          style={{
+            fontWeight: 'bold',
+            color: 'white',
+            backgroundColor: 'black',
+            padding: 15,
+            margin: 15,
+            fontSize: 16,
+            borderRadius: 10,
+          }}>
+          Tentang Aplikasi
+        </Text>
+        <Text style={{justifyContent:'center', alignItems: 'center', marginHorizontal: 20, textAlign: 'center'}}>
+          Aplikasi ini dibuat untuk menginput nama santri yang kembali
+          ke pondok pesantren Al-Falah Ds. Dempo Barat Kec. Pasean Kab. Pamekasan.
+        </Text>
+        <Text style={{justifyContent:'center', alignItems: 'center', marginHorizontal: 20, textAlign: 'center', margin: 10}}>
+          Dimana balik pondok pesantren ada 3: balik pondok yang pertama ketika hari raya idul fitri, yang kedua ketika hari raya idul adha dan yang ketiga ketika balik pondok maulidurrosul, 
+          jadi Aplikasi ini dapat digunakan pada saat balik pondok pesantren Sumber Baru Al-Falah.
+        </Text>
+      </View>
     </View>
-      
-    </View>
+
+    // </View>
   );
 };
 
 const styles = StyleSheet.create({
-  navItem: {
-    flexDirection: 'row',
-    backgroundColor: 'black',
-    opacity: 0.8,
-    justifyContent: 'space-evenly',
-    padding: 10,
-  },
-  navText: {
-    color: 'white',
-    fontSize: 16,
-  },
+  // navItem: {
+  //   flexDirection: 'row',
+  //   backgroundColor: 'black',
+  //   opacity: 0.8,
+  //   justifyContent: 'space-evenly',
+  //   padding: 10,
+  // },
+  // navText: {
+  //   color: 'white',
+  //   fontSize: 16,
+  // },
   formContainer: {
     flex: 1,
     justifyContent: 'center',

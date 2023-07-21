@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
-const Home = ({ navigation }) => {
+
+
+  const Home = ({ navigation }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [information, setInformation] = useState('');
@@ -20,18 +22,9 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={styles.navItem}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.navText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('About')}>
-          <Text style={styles.navText}>About</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
-          <Text style={styles.navText}>Contact</Text>
-        </TouchableOpacity>
+      <View style={{alignItems: 'center',}}>
+        <Text style={{fontWeight: 'bold', color: 'black', borderBottomWidth: 2, padding: 6, margin: 15, fontSize: 16}}>INPUT SANTRI BALIK PONDOK</Text>
       </View>
-
       <View style={styles.formContainer}>
         <TextInput
           style={styles.input}
@@ -47,12 +40,18 @@ const Home = ({ navigation }) => {
         />
         <TextInput
           style={styles.input}
+          placeholder="Pembimbing Kamar"
+          value={information}
+          onChangeText={text => setInformation(text)}
+        />
+        <TextInput
+          style={styles.input}
           placeholder="Keterangan"
           value={information}
           onChangeText={text => setInformation(text)}
         />
         <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-          <Text style={styles.submitButtonText}>Button</Text>
+          <Text style={styles.submitButtonText}>Simpan</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -67,13 +66,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     padding: 10,
   },
-  navText: {
-    color: 'white',
+  body: {
+    color: 'black',
     fontSize: 16,
   },
   formContainer: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
   },
